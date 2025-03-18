@@ -1,16 +1,17 @@
-name: HACS Validate
+name: Validate
 
 on:
+  push:
   pull_request:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
-  hacs:
-    name: HACS Validate
+  validate-hacs:
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v3"
-      - name: HACS Validate
+      - name: HACS validation
         uses: "hacs/action@main"
         with:
-          ignore: "brands"
           category: "integration"
