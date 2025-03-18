@@ -14,11 +14,9 @@ A Home Assistant custom component to integrate electricity, gas and water data f
 3. Select the category type `integration`
 4. Then once it's there (still in HACS) click the INSTALL button
 5. Restart Home Assistant
-6. Once restarted, in the HA UI go to `Configuration` (the ⚙️ in the lower left) -> `Devices and Services` click `+ Add Integration` and search for `airscape`
+6. Once restarted, in the HA UI go to `Configuration` (the ⚙️ in the lower left) -> `Devices and Services` click `+ Add Integration` and search for `Youtilitics`
 
-## Using the Airscape component
-
-The basic component operation of the component implements all the features of the fan component. This integration extends the basic fan adding additional functionality specific to an Airscape whole house fan.
+## Using the Youtilitics component
 
 **Configuration**
 
