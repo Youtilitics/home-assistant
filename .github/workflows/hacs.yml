@@ -1,0 +1,16 @@
+name: HACS Validate
+
+on:
+  pull_request:
+
+jobs:
+  hacs:
+    name: HACS Validate
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v3"
+      - name: HACS Validate
+        uses: "hacs/action@main"
+        with:
+          ignore: "brands"
+          category: "integration"
