@@ -1,0 +1,10 @@
+{
+    "config": {
+      "step": {
+        "user": {
+          "title": "Youtilitics",
+          "description": "Link your Youtilitics account."
+        }
+      }
+    }
+  }
