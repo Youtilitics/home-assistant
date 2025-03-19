@@ -3,10 +3,9 @@ from datetime import timedelta
 
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from y.youtilitics import YoutiliticsApiClient
 
 from .const import DOMAIN, LOGGER
-from .youtilitics import YoutiliticsApiError
+from .youtilitics import YoutiliticsApiClient, YoutiliticsApiError
 
 
 class YoutiliticsDataCoordinator(DataUpdateCoordinator):

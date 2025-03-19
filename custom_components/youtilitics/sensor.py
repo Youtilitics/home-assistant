@@ -1,9 +1,7 @@
 """Sensor platform for Youtilitics."""
 from datetime import datetime, timedelta
 
-from components.sensor import SensorDeviceClass, SensorStateClass
-
-from homeassistant.components.sensor import SensorEntity
+from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass, SensorEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import UnitOfEnergy, UnitOfVolume
 from homeassistant.core import HomeAssistant

@@ -1,5 +1,5 @@
 """Youtilitics API client."""
-from helpers.config_entry_oauth2_flow import OAuth2Session
+from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
 
 from homeassistant.core import HomeAssistant
 
