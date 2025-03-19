@@ -16,11 +16,6 @@ class YoutiliticsConfigFlow(config_entry_oauth2_flow.AbstractOAuth2FlowHandler, 
     def logger(self):
         return LOGGER
 
-    async def async_step_user(self, user_input=None):
-        """Handle the initial step of the config flow."""
-        LOGGER.info("loading from async_step_user")
-        return await self.async_oauth_create_entry(user_input)
-
     async def async_oauth_create_entry(self, data):
         """Create an entry from OAuth2 data."""
         LOGGER.info("loading from async_oauth_create_entry")
