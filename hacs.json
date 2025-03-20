@@ -2,7 +2,6 @@
     "domain": "youtilitics",
     "name": "Youtilitics",
     "version": "0.1.0",
-    "codeowners": ["@BenoitDuffez"],
     "dependencies": [],
     "documentation": "https://github.com/Youtilitics/home-assistant",
     "integration_type": "hub",
