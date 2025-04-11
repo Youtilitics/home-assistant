@@ -1,4 +1,6 @@
 """Youtilitics API client."""
+from urllib.parse import urlencode
+
 from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
 
 from homeassistant.core import HomeAssistant
@@ -38,5 +40,6 @@ class YoutiliticsApiClient:
         LOGGER.info("loading bulk readings for %s since %s", service_id, state)
         url = f"services/{service_id}"
         if state is not None:
-            url += f"?last={state}"
+            query = urlencode({"last": state})
+            url += f"?{query}"
         return await self._get(url)
