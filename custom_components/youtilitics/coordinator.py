@@ -20,7 +20,7 @@ class YoutiliticsDataCoordinator(DataUpdateCoordinator):
             hass,
             name=DOMAIN,
             logger=LOGGER,
-            update_interval=timedelta(minutes=15),
+            update_interval=timedelta(hours=2),
         )
 
     async def _async_update_data(self):
