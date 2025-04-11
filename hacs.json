@@ -2,7 +2,7 @@
     "domain": "youtilitics",
     "documentation": "https://github.com/Youtilitics/home-assistant",
     "issue_tracker": "https://github.com/Youtilitics/home-assistant/issues",
-    "codeowners": "@BenoitDuffez",
+    "codeowners": ["Youtilitics","BenoitDuffez"],
     "name": "Youtilitics",
     "version": "0.1.0",
     "integration_type": "hub",
