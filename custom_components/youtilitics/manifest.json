@@ -9,6 +9,5 @@
     "iot_class": "cloud_polling",
     "dependencies": ["application_credentials"],
     "requirements": ["requests"],
-    "integration_type": "service",
-    "supported_brands": ["Youtilitics"]
+    "integration_type": "service"
 }
