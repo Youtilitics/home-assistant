@@ -1,6 +1,7 @@
 {
     "domain": "youtilitics",
     "name": "Youtilitics",
+    "version": "0.1.0",
     "codeowners": ["@Youtilitics","@BenoitDuffez"],
     "config_flow": true,
     "documentation": "https://github.com/Youtilitics/home-assistant",
@@ -9,6 +10,5 @@
     "dependencies": ["application_credentials"],
     "requirements": ["requests"],
     "integration_type": "service",
-    "supported_brands": ["Youtilitics"],
-    "services": []
+    "supported_brands": ["Youtilitics"]
 }
