@@ -4,14 +4,8 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.config_entry_oauth2_flow import async_get_config_entry_implementation
 
-from .const import DOMAIN, LOGGER
+from .const import DOMAIN
 from .coordinator import YoutiliticsDataCoordinator
-
-async def async_setup(hass: HomeAssistant, config: dict) -> bool:
-    """Set up the Youtilitics integration."""
-    LOGGER.info("async_setup with config: %s", config)
-    hass.data.setdefault(DOMAIN, {})
-    return True
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Youtilitics config."""
