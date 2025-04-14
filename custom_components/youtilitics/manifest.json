@@ -1,7 +1,6 @@
 {
     "domain": "youtilitics",
     "name": "Youtilitics",
-    "version": "0.0.1",
     "codeowners": ["@Youtilitics","@BenoitDuffez"],
     "config_flow": true,
     "documentation": "https://github.com/Youtilitics/home-assistant",
@@ -9,11 +8,6 @@
     "iot_class": "cloud_polling",
     "dependencies": ["application_credentials"],
     "requirements": ["requests"],
-    "oauth2": {
-      "name": "Youtilitics",
-      "authorization_url": "https://youtilitics.com/authorize",
-      "token_url": "https://youtilitics.com/token"
-    },
     "integration_type": "service",
     "supported_brands": ["Youtilitics"],
     "services": []

@@ -1,5 +1,8 @@
 """OAuth2 application credentials for Youtilitics."""
-from homeassistant.components.application_credentials import ClientCredential
+from homeassistant.components.application_credentials import (
+    ClientCredential,
+    AuthorizationServer,
+)
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import config_entry_oauth2_flow
 
@@ -13,4 +16,11 @@ async def async_get_auth_implementation(
         hass,
         auth_domain,
         credential,
+    )
+
+async def async_get_authorization_server(hass: HomeAssistant) -> AuthorizationServer:
+    """Return authorization server."""
+    return AuthorizationServer(
+        authorize_url="https://youtilitics.com/authorize",
+        token_url="https://youtilitics.com/token"
     )
