@@ -4,7 +4,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.config_entry_oauth2_flow import async_get_config_entry_implementation
 
-from .const import DOMAIN
+from .const import DOMAIN, LOGGER
 from .coordinator import YoutiliticsDataCoordinator
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
@@ -30,9 +30,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     await yt_coordinator.async_config_entry_first_refresh()
 
     # Store coordinator and session
-    hass.data[DOMAIN][entry.entry_id] = {
-        "coordinator": yt_coordinator,
-        # "oauth_session": oauth_session
+    hass.data[DOMAIN] = {
+        entry.entry_id: {
+            "coordinator": yt_coordinator,
+            # "oauth_session": oauth_session
+        }
     }
 
     # Forward setup to sensor platform
