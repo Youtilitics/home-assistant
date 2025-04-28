@@ -5,7 +5,7 @@ from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
 
 from homeassistant.core import HomeAssistant
 
-from . import LOGGER
+from .const import LOGGER
 from .const import API_URL
 
 
