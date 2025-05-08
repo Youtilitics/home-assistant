@@ -17,6 +17,8 @@ class YoutiliticsApiClient:
     def __init__(self, hass: HomeAssistant, entry, implementation) -> None:
         """Initialize the API client."""
         self.oauth_session = OAuth2Session(hass, entry, implementation)
+        self.hass = hass
+        self._bulk_readings: Dict[str, List[Reading]] = {}  # Store readings per service
 
     async def _get(self, path: str) -> Dict:
         """Make HTTP request to Youtilitics."""
@@ -44,4 +46,10 @@ class YoutiliticsApiClient:
             query = urlencode({"last": state})
             url += f"?{query}"
         data = await self._get(url)
-        return [Reading.from_dict(item) for item in data]
+        readings = [Reading.from_dict(item) for item in data]
+        self._bulk_readings[service_id] = readings
+        return readings
+
+    def get_readings(self, service_id: str) -> List[Reading]:
+        """Get stored readings for a given service_id."""
+        return self._bulk_readings.get(service_id, [])
