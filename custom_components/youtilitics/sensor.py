@@ -21,9 +21,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
             service_type = service_types[service['type']]
             if service_type == "Electricity":
                 unit = UnitOfEnergy.KILO_WATT_HOUR
-            elif service_type in {"Gas", "Water"}:
+            elif service_type == "Gas":
+                unit = UnitOfVolume.CUBIC_METERS
+            elif service_type == "Water":
                 unit = UnitOfVolume.LITERS
             else:
+                _LOGGER.debug(f"Skipping unsupported service type {service_type} for service {service.id}")
                 continue
             name = f"{service_type} with {account['utility']['name']}"
             entities.append(YoutiliticsSensor(coordinator, service['id'], name, service_type, unit))

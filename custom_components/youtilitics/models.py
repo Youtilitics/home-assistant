@@ -106,11 +106,12 @@ class Reading:
     @classmethod
     def from_dict(cls, data: Dict) -> 'Reading':
         """Create from API response."""
+        convert_to_cubic_meters = data["unit"] == "L" and data["raw_unit"].lower() == 'therm'
         return cls(
             id=data["id"],
             timestamp=dt_util.parse_datetime(data["timestamp"]),
-            reading=data["reading"],
-            unit=data["unit"],
+            reading=data["reading"] / 1000 if convert_to_cubic_meters else data["reading"],
+            unit='m³' if convert_to_cubic_meters else data["unit"],
             raw_reading=data["raw_reading"],
             raw_unit=data["raw_unit"],
             cost=data["cost"]
